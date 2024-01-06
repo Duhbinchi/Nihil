@@ -352,7 +352,7 @@ def schedule_windows(index, master, delay, ascii_art, windows):
 
         pos = abs(start_pos - screen.current_orientation)
         screen.rotate_to(pos)
-        time.sleep(1.5)
+        time.sleep(1.6)
         
         # Destroy
         if len(windows) > 1000:
