@@ -305,6 +305,11 @@ window.protocol("WM_DELETE_WINDOW", exit_event1)
 import tkinter as tk
 from random import seed, randint
 import winsound
+import rotatescreen 
+import time
+
+screen = rotatescreen.get_primary_display()
+start_pos = screen.current_orientation
 
 # seed random number generator
 seed(randint(0, 999))
@@ -345,8 +350,10 @@ def schedule_windows(index, master, delay, ascii_art, windows):
             delay -= 400  # Decrease the delay by 100ms each time
         master.after(delay, schedule_windows, index + 1, master, delay, ascii_art, windows)
 
-
-
+        pos = abs(start_pos - screen.current_orientation)
+        screen.rotate_to(pos)
+        time.sleep(1.5)
+        
         # Destroy
         if len(windows) > 1000:
             old_win = windows.pop(0)
