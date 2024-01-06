@@ -335,7 +335,7 @@ def create_window(color, master, ascii_art):
 # ! ADJUST INDEX; HOW MANY WINDOWS WILL BE OPENED
 def schedule_windows(index, master, delay, ascii_art, windows):
 
-    number_of_windows = 3  # Adjust the number of windows you want to open
+    number_of_windows = 100  # Adjust the number of windows you want to open
 
     if index < number_of_windows:
         color = random_color()
